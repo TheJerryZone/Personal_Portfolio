@@ -4,10 +4,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-  "dev": "vite",
-  "build": "npx vite build",
-  "lint": "eslint .",
-  "preview": "vite preview"
+    "dev": "vite",
+    "build": "npx vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "postinstall": "chmod +x ./node_modules/.bin/* || true"
   },
   "dependencies": {
     "framer-motion": "^11.2.10",
