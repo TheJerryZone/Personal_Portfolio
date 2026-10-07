@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f6f4ef;
+  --bg-raise: #ece9e1;
+  --fg: #0e0e0d;
+  --muted: #57534a;
+  --border: rgba(14, 14, 13, 0.12);
+  --accent: #3654ff;
+  --accent-2: #e8362c;
+  --scroll-mix: 0;
+
+  /* Fixed JERRY brand palette — deliberately NOT tied to the
+     scroll-driven light/dark variables above, so JERRY reads as a
+     genuinely distinct brand rather than a re-tinted version of the
+     current scroll phase. */
+  --jerry-bg: #060a09;
+  --jerry-panel: #0b1211;
+  --jerry-fg: #e6fff4;
+  --jerry-muted: rgba(230, 255, 244, 0.56);
+  --jerry-border: rgba(96, 255, 187, 0.18);
+  --jerry-green: #4dffb0;
+  --jerry-cyan: #5eead4;
+
+  /* Fixed "Professional mode" palette — dark navy/black, deliberately NOT
+     tied to the scroll-driven light/dark variables above, so this card
+     reads as one deliberate brand mark at every scroll position instead
+     of drifting through gray/olive mid-tones. */
+  --pro-bg: #05070d;
+  --pro-panel: #0c1326;
+  --pro-fg: #eef2ff;
+  --pro-muted: rgba(238, 242, 255, 0.6);
+  --pro-border: rgba(120, 150, 255, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  transition: background-color 0.4s ease;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+/* thin scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+/* Custom cursor — desktop only, enabled via .has-cursor on <html> */
+.has-cursor {
+  cursor: none;
+}
+.has-cursor a,
+.has-cursor button,
+.has-cursor [role='button'] {
+  cursor: none;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  pointer-events: none;
+  border-radius: 999px;
+  border: 1px solid var(--fg);
+  mix-blend-mode: difference;
+  background: var(--fg);
+  transform: translate(-50%, -50%);
+  will-change: transform, width, height;
+}
+
+.cursor-label {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  pointer-events: none;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #fff;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+/* focus visibility */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media (hover: none) {
+  .has-cursor {
+    cursor: auto;
+  }
+}
+
+/* --- JERRY brand helpers ------------------------------------------------ */
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(0.85); }
+}
+.jerry-live-dot {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+/* Soft grain texture behind JERRY brand panels — quiet enough to read as
+   material, not as a UI motif. */
+.jerry-grain {
+  background-image: radial-gradient(rgba(230, 255, 244, 0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+.h-live-dot {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+/* Fine blueprint-style grid behind the professional identity panel — a
+   structured counterpart to JERRY's grain, so the two panels feel like
+   deliberately different materials rather than the same card recolored. */
+.signal-grid {
+  background-image:
+    linear-gradient(rgba(14, 14, 13, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 14, 13, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.thin-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+.thin-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
