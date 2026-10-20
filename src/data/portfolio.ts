@@ -17,7 +17,7 @@ export const profile = {
   status: 'Open to Opportunities | Available for Relocation',
   email: 'harshh2428@gmail.com',
   phone: '+91 6362128332',
-  resumeUrl: '/resume/HARSHITHURS_CV.PDF',
+  resumeUrl: '/resume/harshith-raje-urs-resume.pdf',
 };
 
 export const socialLinks = {
