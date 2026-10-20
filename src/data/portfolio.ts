@@ -15,9 +15,9 @@ export const profile = {
   ],
   location: 'Based in India',
   status: 'Open to Opportunities | Available for Relocation',
-  email: 'harshithrajeurs24@gmail.com',
+  email: 'harshh2428@gmail.com',
   phone: '+91 6362128332',
-  resumeUrl: '/resume/harshith-raje-urs-resume.pdf',
+  resumeUrl: '/resume/HARSHITHURS_CV.PDF',
 };
 
 export const socialLinks = {
