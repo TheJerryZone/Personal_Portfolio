@@ -188,8 +188,8 @@ export const pillars = [
 
 export const experienceData = [
   {
-    period: 'June 2026 - Present',
-    role: 'IT & AI Specialist',
+    period: 'June 2026 - October 2026',
+    role: 'Software Engineer',
     org: 'We Care Lifts Private Limited',
     points: [
       'Design and develop company websites, responsive web applications, digital platforms, and technology-driven business solutions.',
@@ -201,7 +201,7 @@ export const experienceData = [
     ],
   },
   {
-    period: 'Oct 2025 - June 2026',
+    period: 'October 2025 - May 2026',
     role: 'Solution Engineer',
     org: 'Printmac',
     points: [
@@ -338,7 +338,7 @@ export const projectsData = [
     category: 'AI Story & Comic Generation Platform',
     description: 'An AI-powered application for generating stories and comic panels using generative AI.',
     tech: ['React Native', 'JavaScript', 'Node.js', 'ChatGPT API', 'DALL·E API', 'REST APIs', 'Git/GitHub'],
-    links: { github: '', live: '' },
+    links: { github: 'https://github.com/TheJerryZone/Narrato-AI', live: '' },
     overview: 'A mobile-first generative AI platform where a short prompt becomes a written story and a matching set of illustrated comic panels.',
     problem: 'Creating illustrated stories requires both writing and visual skills, which makes short-form creative output slow for individual creators.',
     solution: 'A pipeline that turns user prompts into structured story beats with the ChatGPT API, then renders panel artwork through the DALL·E API behind a Node.js REST layer.',
@@ -501,8 +501,8 @@ export const projectsData = [
 ]
 
 export const educationData = [
-  { degree: 'MCA', school: 'The National Institute of Engineering', period: '2023 – 2025', detail: 'GPA: 7.9' },
-  { degree: 'BCA', school: 'Hindustan College', period: '2020 – 2023', detail: 'GPA: 8.225' },
+  { degree: 'MCA', school: 'The National Institute of Engineering', period: 'Feb 2024 – Nov 2025', detail: 'GPA: 7.9' },
+  { degree: 'BCA', school: 'Hindustan College', period: 'Oct 2020 – Aug 2023', detail: 'GPA: 8.225' },
 ]
 
 export const certifications = [
